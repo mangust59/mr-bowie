@@ -8,7 +8,7 @@ print('Введите свой токен')
 token = input()
 next = None # Переменная в которую будем записывать ключ смещения
 
-def searchurl():
+def searchUrl():
     val = 1 # Переменная для счётчика
     global next
     Fin = open("input.txt","a") # Создаём файл для записи ссылок
@@ -23,11 +23,11 @@ def searchurl():
             Fin.write(str(link)+"\n") # Записываем новую строку в файл
         next = items['response']['next_from'] # Записываем ключ для получения следующих фотографий
         print('dd',items['response']['next_from'])
-        searchurl() # Вызываем функцию
+        searchUrl() # Вызываем функцию
     else: # В случае отсутствия данных
         print("Получили все фото")
 
-def savephoto():
+def savePhoto():
     f = open('input.txt') # Наш файл с ссылками
 
     val = 1 # Переменная для счётчика
